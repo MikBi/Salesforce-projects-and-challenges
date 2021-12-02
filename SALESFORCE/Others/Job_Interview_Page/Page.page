@@ -1,0 +1,18 @@
+<apex:page controller="FindEgde">
+<apex:pageBlock >
+    <apex:pageBlockSection >
+        <apex:repeat value="{!acc}" var="a">
+            <apex:outputText value="{! a.Name}   -  {! a.BillingStreet}"/>
+        </apex:repeat>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection >
+        <apex:form >
+          <apex:selectList value="{!choose}" size="1">
+              <apex:selectOptions value="{!oppList}">
+              </apex:selectOptions>
+            </apex:selectList>
+            <apex:commandButton action="{!updateOpp}" value="update"/>
+        </apex:form>
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
